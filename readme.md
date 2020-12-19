@@ -2,8 +2,7 @@
 
 Run this command to clone
 ```
-git clone https://github.com/md-amirozzaman-niaz/wedevs-backend.git --recurse
--submodules
+git clone https://github.com/md-amirozzaman-niaz/wedevs-backend.git --recurse-submodules
 ```
 
 Run for composer command
@@ -32,12 +31,13 @@ npm run dev
 
 Configure `.env` file's database section
 
-Migrate database and seed command
+Run migration and seed command
 
 ```
 php artisan migrate:fresh --seed
 ```
 
 default user: `admin@demo.com`
+
 password:`password`
 
