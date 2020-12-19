@@ -1,3 +1,4 @@
 [submodule "resources"]
 	path = resources
 	url = https://github.com/md-amirozzaman-niaz/wedevs-frontend
+	branch = main
