@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return Product::all();
+        return auth()->user()->products()->get();
     }
 
     /**
@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
         //
         $url = null;
-        if ($request->has('image')) {
+        if ($request->has('image') && is_file($request->image)) {
             $validated = $request->validate([
                     'image' => 'mimes:jpeg,png,PNG,JPG|max:1014',
                 ]);
@@ -42,6 +42,7 @@ class ProductController extends Controller
         }
 
         $data = $request->except('image');
+        $data['user_id'] = auth()->user()->id;
         $data['image'] = $url;
         return Product::create($data);
     }
@@ -79,7 +80,7 @@ class ProductController extends Controller
             $url = Storage::url($fileName);
             $data['image'] = $url;
         }
-
+        $data['user_id'] = auth()->user()->id;
         return $product->update($data);
     }
 

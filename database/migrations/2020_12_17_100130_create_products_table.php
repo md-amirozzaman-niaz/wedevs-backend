@@ -19,6 +19,11 @@ class CreateProductsTable extends Migration
             $table->longText('description');
             $table->integer('price');
             $table->string('image')->nullable();
+            $table->foreignId('user_id')
+                    ->nullable()
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
             $table->timestamps();
         });
     }
