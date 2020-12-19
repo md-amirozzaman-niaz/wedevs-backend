@@ -5,7 +5,7 @@ Run this command to clone
 git clone https://github.com/md-amirozzaman-niaz/wedevs-backend.git --recurse-submodules
 ```
 
-Run composer command
+Navigate to project folder and Run composer command
 ```
 composer i
 ```
