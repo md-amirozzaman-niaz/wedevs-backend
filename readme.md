@@ -36,7 +36,10 @@ Run migration and seed command
 ```
 php artisan migrate:fresh --seed
 ```
-
+Start mysql server and run this command
+```
+php artisan serve
+```
 default user: `admin@demo.com`
 
 password:`password`
